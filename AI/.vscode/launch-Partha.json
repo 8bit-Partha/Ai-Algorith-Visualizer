@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Launch Chrome against localhost",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/frontend"
+        },
+        {
+            "name": "Debug Backend",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceFolder}/backend/src/server.js",
+            "cwd": "${workspaceFolder}/backend",
+            "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+            "env": {
+                "NODE_ENV": "development"
+            }
+        },
+        {
+            "name": "Debug AI Service",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/ai-algorithm-visualizer/ai-service/app/main.py",
+            "cwd": "${workspaceFolder}/ai-algorithm-visualizer/ai-service",
+            "env": {
+                "PATH": "${workspaceFolder}/ai-algorithm-visualizer/ai-service/venv/Scripts;${env:PATH}"
+            },
+            "console": "integratedTerminal"
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Debug All Services",
+            "configurations": ["Debug Backend", "Debug AI Service", "Launch Chrome against localhost"]
+        }
+    ]
+}

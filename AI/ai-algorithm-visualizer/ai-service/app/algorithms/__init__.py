@@ -1,0 +1,1 @@
+# Make algorithms a package
